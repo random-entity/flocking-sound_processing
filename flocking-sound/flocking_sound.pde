@@ -32,7 +32,7 @@ void setup() {
   for (int i = 0; i < 50; i++) {
     flock.addBoid(new Boid(random(width), random(height), this));
   }
-  
+
   cp5 = new ControlP5(this);
   setupGui();
 }
@@ -43,8 +43,7 @@ void draw() {
 }
 
 // Add a new boid into the System
-// TODO: Switch to mouseDragged
-void mousePressed() {
+void mouseDragged() {
   if (mouseButton == LEFT) {
     flock.addBoid(new Boid(mouseX, mouseY, this));
   } else if (mouseButton == RIGHT) {
