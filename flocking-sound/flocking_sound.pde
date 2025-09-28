@@ -40,11 +40,12 @@ void setup() {
 void draw() {
   background(63);
   flock.run();
+  text(flock.boids.size(), width/2, 20);
 }
 
 // Add a new boid into the System
 void mouseDragged() {
-  if (mouseX < 120 && mouseY < 120) return; // Prevent GUI control adding/removing boids
+  if (mouseX < 400 && mouseY < 200) return; // Prevent GUI control adding/removing boids
   
   if (mouseButton == LEFT) {
     flock.addBoid(new Boid(mouseX, mouseY, this));
