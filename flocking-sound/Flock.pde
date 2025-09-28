@@ -14,12 +14,13 @@ class Flock {
   }
 
   void addBoid(Boid b) {
+    if (boids.size() > 1000) return;
     boids.add(b);
   }
-  
+
   void removeFirstBoid() {
+    if (boids.isEmpty()) return;
     boids.get(0).osc.stop();
     boids.remove(0);
   }
-
 }
