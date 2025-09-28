@@ -7,7 +7,7 @@ boolean DISCRETE = true;
 boolean divMode = DISCRETE;
 // Scale mode
 int PENTATONIC = 0;
-int scaleMode = 7;
+int scaleMode = PENTATONIC;
 
 float turnMag;
 float curlMag;

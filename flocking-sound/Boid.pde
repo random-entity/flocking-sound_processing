@@ -61,9 +61,9 @@ class Boid {
     PVector ali = align(boids);      // Alignment
     PVector coh = cohesion(boids);   // Cohesion
     // Arbitrarily weight these forces
-    sep.mult(1.5);
-    ali.mult(1.0);
-    coh.mult(1.0);
+    sep.mult(sepWeight);
+    ali.mult(aliWeight);
+    coh.mult(cohWeight);
     // Add the force vectors to acceleration
     applyForce(sep);
     applyForce(ali);
@@ -104,8 +104,8 @@ class Boid {
     float theta = velocity.heading2D() + radians(90);
     // heading2D() above is now heading() but leaving old syntax until Processing.js catches up
 
-    fill(200, 100);
-    stroke(255);
+    noFill();
+    stroke(191);
     pushMatrix();
     translate(position.x, position.y);
     rotate(theta);
@@ -117,11 +117,12 @@ class Boid {
     popMatrix();
 
     // Addition for sound
-    this.osc.amp(0.5 / sqrt(numBoids));
+    float myFreq;
     while (theta < 0) theta += TWO_PI; // Make theta in range 0 ~ 2PI
     if (divMode == CONTINUOUS) {
       float logFreq = map(theta, 0, TWO_PI, logLowestFreq, logLowestFreq + octaves * log(2));
-      this.osc.freq(exp(logFreq));
+      myFreq = exp(logFreq);
+      this.osc.freq(myFreq);
     } else {
       float mapped;
       if (scaleMode == PENTATONIC) {
@@ -141,10 +142,19 @@ class Boid {
           (section % 5 == 3) ? 7 : 9
           );
       } else {
-        note  = (section * scaleMode) % (octaves * 12);
+        if (octaves != 0) {
+          note  = (section * scaleMode) % (abs(octaves) * 12);
+        } else {
+          note = 0;
+        }
       }
-      this.osc.freq(exp(logLowestFreq + log(2) * (note + drift) / 12.0));
+      myFreq = exp(logLowestFreq + log(2) * (note + drift) / 12.0);
+      this.osc.freq(myFreq);
     }
+
+    float myAmp = 0.35 / sqrt(numBoids);
+    myAmp /= 0.3 + 0.7 * myFreq / 1000.0; // Turn down high frequency
+    this.osc.amp(myAmp);
   }
 
   // Wraparound

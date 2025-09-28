@@ -1,5 +1,3 @@
-import processing.sound.*;
-
 /**
  * Flocking
  * by Daniel Shiffman.
@@ -22,15 +20,21 @@ import processing.sound.*;
  * Search for "Addition for sound" to see where some lines of code is added for making sound.
  */
 
+import processing.sound.*;
+import controlP5.*;
+
 Flock flock;
 
 void setup() {
   size(700, 700);
   flock = new Flock();
   // Add an initial set of boids into the system
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 50; i++) {
     flock.addBoid(new Boid(random(width), random(height), this));
   }
+  
+  cp5 = new ControlP5(this);
+  setupGui();
 }
 
 void draw() {
