@@ -21,6 +21,13 @@
 	* The `drift` parameter controls how much the heading offset from heading-interval center is mapped into microtonal pitch bend.
 * For users bored from these boids making the same sound forever when not tweaking parameters, setting the `turnMag` or `curlMag` parameters far from 0 will make them boids to turn and curl, so that their pitches change frequently even when you're sleeping. The `turnMag` parameter controls how much the boids wants to turn left or right relative to its current heading. The `curlMag` controls how much the boids wants to turn left or right relative to its current position relative to the center of the program window.
 * The bottom three parameters, `sepWeight`, `aliWeight`, `cohWeight`, controls the 'separation', 'alignment', 'coherence' elements respectively, in the original Boid algorithm and Daniel Shiffman's implementation example code.
+* Miscellaneous details:
+	* Amplitude of each oscillator decreases as the boid population increases to prevent clipping.
+	* Higher frequencies and lesser amplitude so it doesn't get on your nerves.
+
+## YouTube live
+
+- You might watch a random entity publicly [livestreaming on YouTube](https://www.youtube.com/@public_random_entity/streams) playing with this little program, on random time. You must be very luck if you managed to catch it (the random entity) streaming live.
 
 ## Dependencies
 
@@ -30,9 +37,10 @@
 
 ## Maybe add later...
 
+- I feel that the `drift` parameter is not functioning as expected?
 - Some LFOs to automatically modulate the parameters even when you're sleeping.
 - Let the boids themselves to modulate the parameters even when you're sleeping.
-- A Web version of this
+- A Web version of this so everyone can access and play with it.
 
 ## License
 
@@ -40,6 +48,6 @@
 
 ## Contact
 
-You are welcome to contact me about this little repository.
+You are welcome to contact me about this little repository, whether this made you happy or sad.
 - Gmail: randomentityemail@gmail.com
 - Instagram: https://www.instagram.com/public_random_entities/
