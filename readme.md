@@ -46,6 +46,8 @@
 
 [flocking-sound_processing](https://github.com/random-entity/flocking-sound_processing) by [random-entity](https://github.com/random-entity) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
+[![CC BY-NC-SA 4.0 License](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ## Contact
 
 You are welcome to contact me about this little repository, whether this made you happy or sad.
