@@ -27,7 +27,7 @@
 
 ## YouTube live
 
-- You might watch a random entity publicly [livestreaming on YouTube](https://www.youtube.com/@public_random_entity/streams) playing with this little program, on random time. You must be very luck if you managed to catch it (the random entity) streaming live.
+- You might watch a random entity publicly [livestreaming on YouTube](https://www.youtube.com/@public_random_entity/streams) playing with this little program, on random time. You must be very lucky if you managed to catch it (the random entity) streaming live.
 
 ## Dependencies
 
