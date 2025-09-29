@@ -8,7 +8,7 @@
 
 ## How it works and how to use
 
-- Mouse drag with left button to add, with right button to remove boids.
+* Mouse drag with left button to add, with right button to remove boids.
 * A sine oscillator is attached to each of the boids, and the frequency of the oscillator is some function of the boid's velocity direction (i.e. heading), designed to make more closely aligned individuals to produce more simliar or closely related pitches.
 	* In continuous mode, the heading in $[0, 2\pi)$ is mapped into frequency $[\texttt{lowestFreq}, \texttt{octaves} \text{ octaves higher than } \texttt{lowestFreq})$, in logarithmic scale.
 	* In discrete mode, the heading range $[0, 2\pi)$ is chopped into equally-lengthed heading-intervals, and each of them maps into some pitch-interval (in 12 equal temperament) relative to `lowestFreq`, up to `octaves` octaves.
