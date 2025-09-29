@@ -39,8 +39,11 @@
 
 - I feel that the `drift` parameter is not functioning as expected?
 - Some LFOs to automatically modulate the parameters even when you're sleeping.
+- More types of interesting force fields.
 - Let the boids themselves to modulate the parameters even when you're sleeping.
-- A Web version of this so everyone can access and play with it.
+- Alternate versions:
+  - Web version of this so everyone can access and play with it.
+  - Maybe some Max patch version or a plugin version?
 
 ## License
 
